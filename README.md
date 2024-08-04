@@ -4,24 +4,22 @@ This project implements a Pulse Width Modulation (PWM) module using a Finite Sta
 The PWM module generates a PWM signal based on the input clock and reset signals. The PWM signal's period and on-time duration can be configured using parameters. The module uses an FSM to manage the different states of the PWM cycle.
 
 ## Parameters
-period: The total period of the PWM signal.
-period_On: The on-time duration within the PWM period.
-Ports
-input clk: The clock input.
-input rst: The reset input (active high).
-output reg dout: The PWM output signal.
-FSM States
-NEW_CYCLE: State to start a new cycle.
-ON_CYCLE: (Defined but not used in the current implementation).
-OFF_CYCLE: State for the off-time duration.
-INITIAL_CYCLE: State for initialization.
-Testbench Description
-The testbench (tb_PWM.v) is used to simulate the PWM module and verify its functionality. It generates a clock signal, applies a reset signal, and monitors the output.
+- period: The total period of the PWM signal.                      
+- period_On: The on-time duration within the PWM period.
+- Ports
+    - input clk: The clock input.
+    - input rst: The reset input (active high).
+    - output reg dout: The PWM output signal.
+- FSM States
+    - NEW_CYCLE: State to start a new cycle.
+    - ON_CYCLE: (Defined but not used in the current implementation).
+    - OFF_CYCLE: State for the off-time duration.
+    - INITIAL_CYCLE: State for initialization.
 
 ## Key Components                                        
-Clock generation: A 100 MHz clock is generated using an always block.
-Reset sequence: The reset signal is asserted and de-asserted to initialize the module.
-Monitoring: The $monitor system task is used to print signal values during simulation.
+- Clock generation: A 100 MHz clock is generated using an always block.
+- Reset sequence: The reset signal is asserted and de-asserted to initialize the module.
+- Monitoring: The $monitor system task is used to print signal values during simulation.
 
 ## How to Run the Simulation
 Open your preferred Verilog simulation tool (e.g., ModelSim, Vivado, etc.).
